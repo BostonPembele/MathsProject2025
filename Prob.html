@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="Prob Icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probability Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(45deg, #1e3c72, #2a5298);
+            color: white;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            background: gold;
+            color: black;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: orange;
+        }
+        .output {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .coin {
+            font-size: 50px;
+            margin: 20px;
+        }
+        iframe {
+            margin-top: 30px;
+            width: 80%;
+            height: 400px;
+            border: solid white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Probability Game</h1>
+        <h2>Coin Flip Game</h2>
+        <div class="coin" id="coin">🪙</div>
+        <button onclick="flipCoin()">Flip Coin</button>
+        <p class="output" id="coinResult">Click to flip!</p>
+    </div>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/SkidyDQuupA?si=TrYi29A0ubalRchS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <br><br><br><br><br><br>
+    <a href="home.html"><button>Home Page</button></a>
+
+    <script>
+        function flipCoin() {
+            let result = Math.random() < 0.5 ? "Heads" : "Tails";
+            let coin = document.getElementById("coin");
+            let output = document.getElementById("coinResult");
+            
+            coin.innerText = result === "Heads" ? "😀" : "🦅";
+            output.innerText = "Result: " + result;
+            alert(result);
+        }
+    </script>
+</body>
+</html>

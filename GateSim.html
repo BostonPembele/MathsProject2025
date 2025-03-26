@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="gate icon.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gate Simulator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(45deg, #1e3c72, #2a5298);
+            color: white;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            background: gold;
+            color: black;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: orange;
+        }
+        .output {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 50%;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        th, td {
+            border: 1px solid white;
+            padding: 10px;
+            text-align: center;
+        }
+        select {
+            padding: 5px;
+            font-size: 16px;
+        }
+        iframe {
+            margin-top: 30px;
+            width: 80%;
+            height: 400px;
+            border: solid white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Logic Gate Simulator</h1>
+        
+        <h2>Nand, And, Or & Xor</h2>
+        <table>
+            <tr>
+                <th>Input A</th>
+                <th>Input B</th>
+                <th>Gate</th>
+                <th>Result</th>
+            </tr>
+            <tr>
+                <td>
+                    <select id="inputA">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="inputB">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="gateType">
+                        <option value="AND">AND</option>
+                        <option value="OR">OR</option>
+                        <option value="XOR">XOR</option>
+                        <option value="NAND">NAND</option>
+                    </select>
+                </td>
+                <td id="gateResult">-</td>
+            </tr>
+        </table>
+        <button onclick="calculateGate()">Calculate</button>
+    </div>
+
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/JQBRzsPhw2w?si=BoBG2-sYytK_fD-A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <br><br><br><br><br><br>
+    <a href="home.html"><button> Home Page</button></a><br>
+   
+
+    <script>
+        function calculateGate() {
+            let a = parseInt(document.getElementById("inputA").value);
+            let b = parseInt(document.getElementById("inputB").value);
+            let gate = document.getElementById("gateType").value;
+            let result;
+
+            switch(gate) {
+                case 'AND': result = a & b; break;
+                case 'OR': result = a | b; break;
+                case 'XOR': result = a ^ b; break;
+                case 'NAND': result = !(a & b) ? 1 : 0; break;
+            }
+
+            document.getElementById("gateResult").innerText = result;
+        }
+    </script>
+</body>
+</html>
