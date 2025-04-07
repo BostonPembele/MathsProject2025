@@ -55,18 +55,31 @@
             height: 400px;
             border: solid white;
         }
+        #background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    width: 1%;
+}
     </style>
 </head>
 <body>
+    <video autoplay muted loop id="background-video">
+        <source src="spring-blossom-town.3840x2160.mp4" type="video/mp4">
+    </video>
     <div class="container">
         <h1>Boston's Interactive Computing Maths Website!</h1>
         <h2>Your perfect site for a simple game and video explaining the math topic</h2>
         <p class="intro">Explore different concepts which are Probability, Matrices & Logic Gates.</p>
         <img src="OIP.jfif" alt="" id="pic">
         <div class="button-container">
-            <a href="Matrices.html"><button> Matrices Calculator </button></a>
-            <a href="Prob.html"><button> Probability Game</button></a>
-            <a href="GateSim.html"><button> Gate Simulator</button></a>
+            <a href="Matrices/Matrices.html"><button> Matrices Calculator </button></a>
+            <a href="Probability/Prob.html"><button> Probability Game</button></a>
+            <a href="GateSim/GateSim.html"><button> Gate Simulator</button></a>
         </div>
     </div>
 

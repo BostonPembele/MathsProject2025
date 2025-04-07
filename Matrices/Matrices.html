@@ -53,9 +53,22 @@
             height: 400px;
             border: solid white;
         }
+        #background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    width: 1%;
+}
     </style>
 </head>
 <body>
+    <video autoplay muted loop id="background-video">
+        <source src="/spring-blossom-town.3840x2160.mp4" type="video/mp4">
+    </video>
     <div class="container">
         <h1>Matrix Calculator</h1>
         <h2>2x2 Matrix Addition</h2>
@@ -94,7 +107,7 @@
         </table>
     </div>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/yRwQ7A6jVLk?si=Ispc7wuDYSdjf5TJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br><br><br><br><br><br>
-    <a href="home.html"><button> Home Page</button></a>
+    <a href="/home.html"><button> Home Page</button></a>
 
     <script>
         function calculateMatrix() {
